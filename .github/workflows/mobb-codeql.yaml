@@ -10,7 +10,7 @@ name: "Mobb/CodeQL"
 
 on:
   pull_request:
-    branches: ["main"]
+    branches: ["*"]
 
 jobs:
   scan-and-fix:
