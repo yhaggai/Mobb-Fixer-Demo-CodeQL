@@ -29,9 +29,14 @@ jobs:
         codeql_output_filename: ["javascript.sarif"]
 
     steps:
+    
       - name: Checkout repository
         uses: actions/checkout@v3
-
+      - id: test
+        run: |
+          PR_NUMBER=${{ github.event.pull_request.number }}
+          echo PR-NUM-$PR_NUMBER
+        
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v2
         with:
