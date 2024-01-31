@@ -48,6 +48,6 @@ jobs:
         uses: yhaggai/action/review@main
         with:
           report-file: results/${{ matrix.codeql_output_filename }}
-          api-key: ${{ secrets.MOBB_API_TOKEN_DEV }}
+          api-key: ${{ secrets.MOBB_API_TOKEN }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
           scanner: codeql
