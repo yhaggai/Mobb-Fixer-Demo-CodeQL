@@ -42,11 +42,11 @@ jobs:
         with:
           category: "/language:${{ matrix.language }}"
           output: results
-      - name: Extract tgz
-        uses: ihiroky/extract-action@v1
+      - uses: actions/upload-artifact@v3
         with:
-          file_path: results/codeql-res.zip
-          extract_dir: results
+          name: codeql-res
+          path: results
+          if-no-files-found: error # 'warn' or 'ignore' are also available, defaults to `warn`
 
       - name: Run Mobb on the findings and get fixes
         if: always()
