@@ -4,4 +4,4 @@ var urlParams = new URLSearchParams(window.location.search);
 var username = urlParams.get('username');
 
 var unsafe_div = window.document.getElementById("vulnerable-div");
-unsafe_div.innerHTML = "He1llo to you " + username;
+unsafe_div.textContent = "He1llo to you " + username;
